@@ -45,16 +45,25 @@
     </header>
     {{ content }}
     <footer>
-      &copy; to me
+      <div class="logo">
+        Alora Yurts
+      </div>
+      <nav>
+        <a href="mailto:sara@alorayurts.com">sara@alorayurts.com</a>
+        <a href="tel:003%204684%20056%20987">003 4684 056 987</a>
+      </nav>
     </footer>
   </body>
   <script>
     (function() {
       var headerHeight = 100;
       var header = document.querySelector('header');
-      var headerFixed = function () {
+      var mobileMenu = document.getElementById('menu');
+      var mobileSidebar = document.getElementById('sidebar');
+
+      var scroll = function () {
         var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-        if (scrollTop > headerHeight) {
+        if (scrollTop > headerHeight - 20) {
           header.classList.add('fixed');
           var y = scrollTop < headerHeight * 2 ? scrollTop - headerHeight : headerHeight;
           header.style.transform = `translate3d(0,${y}%,0)`;
@@ -63,8 +72,7 @@
           header.style.transform = `translate3d(0,0,0)`;
         }
       };
-      var mobileMenu = document.getElementById('menu');
-      var mobileSidebar = document.getElementById('sidebar');
+
       var toggleMobileMenu = function () {
         mobileMenu.classList.toggle('active');
         mobileSidebar.classList.toggle('active');
@@ -72,7 +80,7 @@
       };
 
       document.addEventListener('click', toggleMobileMenu);
-      document.addEventListener('scroll', headerFixed);
+      document.addEventListener('scroll', scroll);
     })();
   </script>
 </html>
