@@ -1,0 +1,146 @@
+*, *:before, *:after { box-sizing: border-box; }
+
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background: #ffd000; margin: 0; }
+
+.mobile-sidebar { position: fixed; top: 0; left: 0; right: 0; bottom: 0; padding: 60px 15px 0; background: #111; display: none; z-index: 10; }
+
+.mobile-sidebar.active { display: block; }
+
+@media (min-width: 720px) { .mobile-sidebar.active { display: none; } }
+
+.mobile-sidebar a { margin-top: 15px; padding: 15px 0 10px; color: #ffd000; font-size: 1.2em; font-weight: 700; border-bottom: 2px solid rgba(255, 208, 0, 0.2); text-decoration: none; display: block; animation: 350ms menuitem ease-in-out; }
+
+@keyframes menuitem { 0% { margin-top: 25px;
+    opacity: 0; } }
+
+header { position: absolute; top: 0; left: 0; right: 0; z-index: 1; color: #fff; height: 60px; padding: 0 15px; z-index: 11; align-items: center; display: flex; }
+
+@media (min-width: 400px) { header { height: 100px; padding: 0 20px; } }
+
+@media (min-width: 870px) { header { padding: 0 40px; } }
+
+header.fixed, header.menu-active { position: fixed; top: -60px; height: 60px; background: #111; color: #ffd000; }
+
+@media (min-width: 400px) { header.fixed, header.menu-active { top: -80px; height: 80px; } }
+
+header.fixed nav a, header.menu-active nav a { color: #ffd000; }
+
+header.fixed nav a:hover, header.menu-active nav a:hover { color: #fff; }
+
+header.fixed .social .icons a svg, header.menu-active .social .icons a svg { fill: #ffd000; }
+
+header.fixed .social .icons a svg:hover, header.menu-active .social .icons a svg:hover { fill: #fff; }
+
+header.fixed .social .icons .menuicon span, header.menu-active .social .icons .menuicon span { background: #ffd000; }
+
+header.fixed .social .icons .menuicon:hover span, header.menu-active .social .icons .menuicon:hover span { background: #fff; }
+
+header.menu-active { transform: translate3d(0, 100%, 0) !important; }
+
+header .logo { font-family: 'Lily Script One'; font-size: 1.6em; flex-grow: 1; }
+
+@media (min-width: 400px) { header .logo { font-size: 2em; } }
+
+@media (min-width: 720px) { header .logo { font-size: 1.6em; } }
+
+@media (min-width: 870px) { header .logo { font-size: 1.8em; } }
+
+@media (min-width: 1100px) { header .logo { flex-grow: unset; flex: 1; } }
+
+@media (min-width: 1000px) { header .logo { font-size: 1.8em; } }
+
+@media (min-width: 1100px) { header .logo { font-size: 2em; } }
+
+@media (min-width: 1200px) { header .logo { font-size: 2.4em; } }
+
+header nav { display: none; }
+
+@media (min-width: 720px) { header nav { justify-content: center; display: flex; } }
+
+@media (min-width: 1100px) { header nav { flex-grow: 1; } }
+
+header nav a { padding: 0 10px; font-size: 1em; font-weight: 700; text-decoration: none; color: #fff; }
+
+@media (min-width: 870px) { header nav a { padding: 0 15px; font-size: 1.1em; } }
+
+header .social { display: flex; }
+
+@media (min-width: 1100px) { header .social { flex: 1; justify-content: flex-end; } }
+
+header .social .icons { display: flex; }
+
+header .social .icons a, header .social .icons .menuicon { flex: 1; margin-left: 20px; text-decoration: none; }
+
+header .social .icons a svg, header .social .icons .menuicon svg { width: 40px; fill: #fff; }
+
+header .social .icons a { display: none; }
+
+@media (min-width: 400px) { header .social .icons a { display: block; } }
+
+header .social .icons .menuicon { position: relative; width: 30px; height: 30px; cursor: pointer; justify-content: center; flex-direction: column; display: flex; }
+
+@media (min-width: 400px) { header .social .icons .menuicon { width: 40px; height: 40px; } }
+
+@media (min-width: 720px) { header .social .icons .menuicon { display: none; } }
+
+header .social .icons .menuicon span { margin: 4px 0; width: 100%; height: 4px; background: #fff; display: block; }
+
+header .social .icons .menuicon.active:before, header .social .icons .menuicon.active:after { position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; width: 30px; height: 2px; transform: rotate(45deg); background: #ffd000; content: ''; }
+
+header .social .icons .menuicon.active:after { transform: rotate(-45deg); }
+
+header .social .icons .menuicon.active span { opacity: 0; }
+
+.hero { position: relative; width: 100%; background: #666; overflow: hidden; z-index: 0; }
+
+.hero .background { position: absolute; top: 0; left: 0; right: 0; bottom: -80px; background: url("../images/photos/pool.jpg") 50% 60%/cover no-repeat; filter: brightness(0.7); }
+
+@media (min-width: 515px) { .hero .background { bottom: 0; } }
+
+.hero h1 { position: relative; margin: auto; width: 100%; max-width: 290px; padding: 80px 0px 120px; font-size: 1em; line-height: 1.7em; text-align: center; color: #fff; }
+
+@media (min-width: 370px) { .hero h1 { max-width: 370px; padding: 80px 30px 180px; font-size: 2em; line-height: unset; } }
+
+@media (min-width: 400px) { .hero h1 { padding-top: 120px; } }
+
+@media (min-width: 515px) { .hero h1 { max-width: 480px; padding: 120px 0; font-size: 1.8em; } }
+
+@media (min-width: 620px) { .hero h1 { max-width: 600px; padding: 150px 0; font-size: 2.2em; } }
+
+@media (min-width: 860px) { .hero h1 { max-width: 850px; padding: 200px 0; font-size: 3em; } }
+
+@media (min-width: 1150px) { .hero h1 { max-width: 1100px; padding: 160px 0 270px; font-size: 4em; } }
+
+.availability { position: relative; margin: -75px auto 0; background: #fff; height: 150px; width: 1100px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); }
+
+.intro .row { margin: auto; max-width: 1400px; padding: 20px 20px 0; }
+
+@media (min-width: 500px) { .intro .row { padding: 60px 60px 0; display: flex; } }
+
+@media (min-width: 500px) { .intro .row:last-child { padding-bottom: 60px; } }
+
+.intro .row:nth-child(even) { flex-direction: row-reverse; }
+
+.intro .row:nth-child(even) .content { padding-right: unset; }
+
+@media (min-width: 500px) { .intro .row:nth-child(even) .content { padding-left: 60px; } }
+
+.intro .row .content { font-size: 1.2em; line-height: 1.4em; align-items: center; display: flex; flex: 1; }
+
+@media (min-width: 500px) { .intro .row .content { font-size: 1.8em; padding-right: 60px; } }
+
+.intro .row .photos { flex: 1; margin: 20px 0 0; }
+
+@media (min-width: 500px) { .intro .row .photos { margin: 0; } }
+
+.intro .row .photos img { width: 100%; display: block; }
+
+footer { padding: 80px 0; text-align: center; background: #fff; }
+
+footer .logo { font-family: 'Lily Script One'; font-size: 2.4em; padding-bottom: 40px; }
+
+footer nav { text-align: center; }
+
+footer nav a { text-decoration: none; padding: 15px; color: #444; }
+
+/*# sourceMappingURL=main.css.map */
